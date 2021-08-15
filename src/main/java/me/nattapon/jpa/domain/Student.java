@@ -25,7 +25,6 @@ import org.hibernate.annotations.Type;
 @Getter
 @Setter
 public class Student {
-
     @Id
     @Column(nullable = false, updatable = false, columnDefinition = "char(36)")
     @Type(type = "uuid-char")
@@ -39,7 +38,7 @@ public class Student {
     @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)

@@ -33,4 +33,25 @@ public class StudentDTO {
 
     private UUID studentIdCard;
 
+    public StudentDTO() {}
+
+    public StudentDTO(String firstName, String lastName, String email, Integer age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentDTO{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", studentCourses=" + studentCourses +
+                ", studentIdCard=" + studentIdCard +
+                '}';
+    }
 }

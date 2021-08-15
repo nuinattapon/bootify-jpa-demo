@@ -8,6 +8,7 @@ spring:
     validation-query: "SELECT 1"
     validation-query-timeout: 30
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
     open-in-view: false
@@ -20,3 +21,6 @@ spring:
           new_generator_mappings: true
 springdoc:
   pathsToMatch: /api/**
+logging:
+  level:
+    org.springframework: INFO
