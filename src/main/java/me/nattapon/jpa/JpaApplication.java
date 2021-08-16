@@ -1,7 +1,6 @@
 package me.nattapon.jpa;
 
 import me.nattapon.jpa.model.StudentDTO;
-import me.nattapon.jpa.repos.StudentRepository;
 import me.nattapon.jpa.service.StudentService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,20 +20,19 @@ public class JpaApplication {
     @Bean
     CommandLineRunner commandLineRunner(StudentService service) {
         return args -> {
-            StudentDTO s = new StudentDTO("Nui","Sub-Anake","nui@test.com",49);
+            StudentDTO s = new StudentDTO("Nui", "Sub-Anake", "nui@test.com", 49);
             System.out.println(s);
 
             UUID id = service.create(s);
 
             System.out.println(id.toString());
 
-            s = new StudentDTO("Somboon","Dansirichaiwasat","danso01@test.com",48);
+            s = new StudentDTO("Somboon", "Dansirichaiwasat", "danso01@test.com", 48);
             service.update(id, s);
 
             StudentDTO entity = service.get(id);
 
             System.out.println(entity);
-
 
         };
     }
