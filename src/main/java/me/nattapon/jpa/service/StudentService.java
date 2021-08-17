@@ -1,5 +1,6 @@
 package me.nattapon.jpa.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
@@ -94,6 +95,15 @@ public class StudentService {
             student.setStudentIdCard(studentIdCard);
         }
         return student;
+    }
+
+    public List<StudentDTO> findByFirstNameLikeOrLastNameLike(String firstName, String lastName) {
+        List<StudentDTO> list = new ArrayList<>();
+        for (Student student : studentRepository.findByFirstNameLikeOrLastNameLike(firstName, lastName)) {
+            StudentDTO studentDTO = mapToDTO(student, new StudentDTO());
+            list.add(studentDTO);
+        }
+        return list;
     }
 
 }
