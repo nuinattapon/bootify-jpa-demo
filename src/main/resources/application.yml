@@ -13,12 +13,14 @@ spring:
       ddl-auto: update
     open-in-view: false
     properties:
+#      hibernate.format_sql: true
       hibernate:
         jdbc:
           lob:
             non_contextual_creation: true
         id:
           new_generator_mappings: true
+        format_sql: true
 springdoc:
   pathsToMatch: /api/**
 logging:
