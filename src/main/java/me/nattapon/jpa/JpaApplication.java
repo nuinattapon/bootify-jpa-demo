@@ -26,13 +26,17 @@ public class JpaApplication {
             for(StudentDTO studentDTO : all) {
                 service.delete(studentDTO.getId());
             }
-
-            StudentDTO s = new StudentDTO("Sam", "Dansirichai", "sam@test.com", 48);
+            StudentDTO s = new StudentDTO("Somsri", "Dansri", "somsri@test.com", 48);
             System.out.println("s = " + s);
             UUID id = service.create(s);
             System.out.println("id = " + id);
 
             s = new StudentDTO("Somboon", "Dansirichaisawat", "danso01@test.com", 48);
+            System.out.println("s = " + s);
+            id = service.create(s);
+            System.out.println("id = " + id);
+
+            s = new StudentDTO("Sam", "Dansirichai", "sam@test.com", 48);
             System.out.println("s = " + s);
             id = service.create(s);
             System.out.println("id = " + id);
@@ -43,10 +47,10 @@ public class JpaApplication {
             System.out.println("id = " + id);
 
             List<StudentDTO> entities = service.findByFirstNameLikeOrLastNameLike("S%", "Dansiri%");
-            entities.forEach(e-> {
-                System.out.println("e.getFirstName() = " + e.getFirstName());
-                System.out.println("e.getLastName() = " + e.getLastName());
-            });
+//            entities.forEach(e-> {
+//                System.out.println("e.getFirstName() = " + e.getFirstName());
+//                System.out.println("e.getLastName() = " + e.getLastName());
+//            });
             for(StudentDTO e : entities) {
                 System.out.println("e.getFirstName() = " + e.getFirstName());
                 System.out.println("e.getLastName() = " + e.getLastName());
